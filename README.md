@@ -2,6 +2,8 @@
 
 **Aplicație web completă de fitness** — tracker de antrenamente, jurnal de nutriție și analiză de progres, construită cu Next.js și Supabase.
 
+**🌐 Demo live: [titan-academy-green.vercel.app](https://titan-academy-green.vercel.app)** — instalabilă pe telefon ca PWA.
+
 ![Titan Academy — pagina principală](docs/home.png)
 
 ## ✨ Funcționalități
