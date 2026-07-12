@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { usePathname, useRouter } from 'next/navigation';
 import { createClient } from '@/lib/supabase/client';
+import LogoMark from '@/components/logo-mark';
 
 export default function Navbar() {
   const pathname = usePathname();
@@ -45,7 +46,7 @@ export default function Navbar() {
 
         {/* Logo */}
         <Link href="/" className="flex items-center gap-3 shrink-0 group">
-          <span className="w-2.5 h-6 bg-ember chamfer-sm group-hover:scale-y-110 transition-transform origin-bottom" />
+          <LogoMark className="w-6 h-6 group-hover:scale-110 transition-transform" />
           <span className="font-display text-xl tracking-wide select-none leading-none uppercase">
             <span className="text-white">TITAN</span>
             <span className="text-ember"> ACADEMY</span>

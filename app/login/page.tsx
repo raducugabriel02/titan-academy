@@ -3,6 +3,7 @@ import { useState, Suspense } from 'react';
 import { createClient } from '@/lib/supabase/client';
 import Link from 'next/link';
 import { useSearchParams } from 'next/navigation';
+import LogoMark from '@/components/logo-mark';
 
 type Mode = 'login' | 'register' | 'forgot';
 
@@ -108,6 +109,7 @@ function LoginContent() {
       <div className="relative z-30 w-full max-w-[420px] py-16">
 
         <div className="text-center mb-10">
+          <LogoMark className="w-12 h-12 mx-auto mb-5 rise" />
           <h1 className="font-display italic uppercase text-5xl leading-none select-none rise">
             <span className="text-white">TITAN</span>{' '}
             <span className="text-ember">ACADEMY</span>

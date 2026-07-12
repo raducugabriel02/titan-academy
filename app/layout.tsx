@@ -31,10 +31,7 @@ export const metadata: Metadata = {
     statusBarStyle: "black-translucent",
     title: "Titan Academy",
   },
-  icons: {
-    icon: "/icons/icon-192.svg",
-    apple: "/icons/icon-192.svg",
-  },
+  // Iconițele vin din convențiile de fișiere: app/favicon.ico, app/icon.svg, app/apple-icon.png
 };
 
 export const viewport: Viewport = {

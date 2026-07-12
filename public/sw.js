@@ -1,4 +1,4 @@
-const CACHE = 'titan-academy-v1';
+const CACHE = 'titan-academy-v2';
 const PRECACHE = ['/', '/dashboard', '/workouts', '/exercises', '/workout', '/profile', '/login'];
 
 self.addEventListener('install', (e) => {

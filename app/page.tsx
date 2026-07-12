@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import LogoMark from '@/components/logo-mark';
 
 function IconDumbbell({ className = 'w-5 h-5' }: { className?: string }) {
   return (
@@ -121,9 +122,9 @@ export default function Home() {
 
           {/* Badge */}
           <div className="mb-8 rise" style={{ '--rise-delay': '0ms' } as React.CSSProperties}>
-            <span className="inline-flex items-center gap-2.5 px-5 py-2 border border-ember/25 bg-ember/5 text-[11px] font-black tracking-[0.4em] text-orange-400 uppercase chamfer-sm">
+            <span className="inline-flex items-center gap-2.5 px-4 sm:px-5 py-2 border border-ember/25 bg-ember/5 text-[10px] sm:text-[11px] font-black tracking-[0.2em] sm:tracking-[0.4em] text-orange-400 uppercase chamfer-sm whitespace-nowrap">
               <span className="w-1.5 h-1.5 bg-ember shrink-0" />
-              Sistemul de Elită v2.0
+              Antrenament · Nutriție · Progres
             </span>
           </div>
 
@@ -277,7 +278,7 @@ export default function Home() {
       <footer className="border-t border-white/[0.06]">
         <div className="max-w-6xl mx-auto px-6 py-8 flex flex-col md:flex-row items-center justify-between gap-5">
           <span className="flex items-center gap-2.5 select-none">
-            <span className="w-2 h-5 bg-ember chamfer-sm" />
+            <LogoMark className="w-5 h-5" />
             <span className="font-display text-lg uppercase leading-none">
               <span className="text-white">TITAN</span>
               <span className="text-ember"> ACADEMY</span>
