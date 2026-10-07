@@ -1,74 +1,74 @@
 # 🏋️ Titan Academy
 
-**Aplicație web completă de fitness** — tracker de antrenamente, jurnal de nutriție și analiză de progres, construită cu Next.js și Supabase.
+**A complete fitness web app** — workout tracker, nutrition journal, and progress analytics, built with Next.js and Supabase.
 
-**🌐 Demo live: [titan-academy-green.vercel.app](https://titan-academy-green.vercel.app)** — instalabilă pe telefon ca PWA.
+**🌐 Live demo: [titan-academy-green.vercel.app](https://titan-academy-green.vercel.app)** — installable on your phone as a PWA.
 
-![Titan Academy — pagina principală](docs/home.png)
+![Titan Academy — home page](docs/home.png)
 
-## ✨ Funcționalități
+## ✨ Features
 
-### 🔐 Autentificare
-- Cont cu **email și parolă** (înregistrare, login, resetare parolă prin email)
-- **Login cu Google** (OAuth prin Supabase, cu selector de cont)
-- Rute protejate prin middleware — paginile personale cer autentificare
+### 🔐 Authentication
+- **Email and password** accounts (sign-up, login, password reset by email)
+- **Google login** (OAuth via Supabase, with account picker)
+- Protected routes via middleware — personal pages require authentication
 
 ### 📊 Dashboard
-- Rezumatul zilei: antrenamentele de azi, volumul total, caloriile consumate față de țintă
-- Statistici pe luna curentă și acces rapid către toate secțiunile
+- Daily summary: today's workouts, total volume, calories consumed vs. target
+- Current-month stats and quick access to all sections
 
-### 💪 Tracker de antrenamente
-- Logare **per set** (repetări + greutate pe fiecare set), cu comasarea automată a seturilor identice
-- **Sesiune activă din plan**: alegi planul zilei, aplicația te ghidează exercițiu cu exercițiu, cu bife, auto-avans și rezumat la final
-- **Detectare de recorduri personale (PR)** la salvare
-- Precompletare inteligentă: la selectarea unui exercițiu vezi ce ai lucrat „ultima dată"
-- Istoric complet cu editare inline
+### 💪 Workout tracker
+- **Per-set logging** (reps + weight for each set), with automatic merging of identical sets
+- **Active session from a plan**: pick the day's plan and the app guides you exercise by exercise, with checkmarks, auto-advance, and a final summary
+- **Personal record (PR) detection** on save
+- Smart prefill: selecting an exercise shows what you did "last time"
+- Full history with inline editing
 
-### 📈 Progres per exercițiu
-- **1RM estimat** (formula Epley) calculat din fiecare sesiune
-- Grafic SVG custom cu 3 metrici: greutate maximă, e1RM și volum
-- Istoricul tuturor sesiunilor pentru exercițiul ales
+### 📈 Per-exercise progress
+- **Estimated 1RM** (Epley formula) calculated from every session
+- Custom SVG chart with 3 metrics: max weight, e1RM, and volume
+- Full session history for the selected exercise
 
-### 🥗 Nutriție
-- Calcul **TDEE** (formula Mifflin-St Jeor) și ținte de macronutrienți personalizate după obiectiv (slăbit / menținut / masă)
-- Jurnal zilnic: calorii, proteine, carbohidrați, grăsimi, apă
-- Inel de progres al caloriilor și grafic săptămânal
-- Ținte editabile manual
+### 🥗 Nutrition
+- **TDEE calculation** (Mifflin-St Jeor formula) and personalized macro targets based on goal (cut / maintain / bulk)
+- Daily journal: calories, protein, carbs, fat, water
+- Calorie progress ring and weekly chart
+- Manually editable targets
 
-### 📚 Catalog de exerciții
-- Peste 50 de exerciții cu **fotografii demonstrative**, instrucțiuni pas cu pas, sfaturi de execuție și video
-- Filtrare pe grupe musculare, căutare, logare direct din pagina exercițiului
+### 📚 Exercise catalog
+- Over 50 exercises with **demonstration photos**, step-by-step instructions, execution tips, and video
+- Filter by muscle group, search, log directly from the exercise page
 
-### 👤 Profil
-- Date personale (greutate, înălțime, vârstă, obiectiv), **IMC calculat automat**, avatar încărcat în Supabase Storage
+### 👤 Profile
+- Personal data (weight, height, age, goal), **auto-calculated BMI**, avatar uploaded to Supabase Storage
 
 ### 📱 PWA
-- Instalabilă pe telefon (manifest + service worker + iconițe) — se comportă ca o aplicație nativă
+- Installable on your phone (manifest + service worker + icons) — behaves like a native app
 
-## 🛠️ Stack tehnologic
+## 🛠️ Tech stack
 
-| Layer | Tehnologie |
+| Layer | Technology |
 |---|---|
 | Framework | Next.js 16 (App Router, Turbopack) |
 | UI | React 19, Tailwind CSS 4 |
-| Limbaj | TypeScript |
+| Language | TypeScript |
 | Backend | Supabase (PostgreSQL, Auth, Storage) |
-| Auth | Supabase Auth — email/parolă + Google OAuth (flux PKCE cu callback server-side) |
+| Auth | Supabase Auth — email/password + Google OAuth (PKCE flow with server-side callback) |
 
-## 🗄️ Structura bazei de date
+## 🗄️ Database structure
 
-| Tabelă | Conținut |
+| Table | Content |
 |---|---|
-| `profiles` | Datele utilizatorului: nume, greutate, înălțime, vârstă, gen, obiectiv |
-| `exercises` | Catalogul de exerciții: nume, slug, grupă musculară, echipament, instrucțiuni, sfaturi |
-| `workouts` | Logurile de antrenament: exercițiu, seturi, repetări, greutate, notițe, dată |
-| `nutrition` | Jurnalul zilnic: calorii, macronutrienți, apă, notițe |
+| `profiles` | User data: name, weight, height, age, gender, goal |
+| `exercises` | Exercise catalog: name, slug, muscle group, equipment, instructions, tips |
+| `workouts` | Workout logs: exercise, sets, reps, weight, notes, date |
+| `nutrition` | Daily journal: calories, macros, water, notes |
 
-Plus un bucket de Storage (`avatars`) pentru pozele de profil. Toate tabelele folosesc **Row Level Security** — fiecare utilizator își vede doar propriile date.
+Plus a Storage bucket (`avatars`) for profile pictures. All tables use **Row Level Security** — each user only sees their own data.
 
-## 🚀 Rulare locală
+## 🚀 Running locally
 
-**1. Clonează și instalează:**
+**1. Clone and install:**
 
 ```bash
 git clone https://github.com/raducugabriel02/titan-academy.git
@@ -76,33 +76,33 @@ cd titan-academy
 npm install
 ```
 
-**2. Configurează Supabase** — creează un proiect pe [supabase.com](https://supabase.com) și adaugă cheile în `.env.local`:
+**2. Set up Supabase** — create a project on [supabase.com](https://supabase.com) and add the keys to `.env.local`:
 
 ```
-NEXT_PUBLIC_SUPABASE_URL=https://<proiectul-tau>.supabase.co
-NEXT_PUBLIC_SUPABASE_ANON_KEY=<cheia-anon>
+NEXT_PUBLIC_SUPABASE_URL=https://<your-project>.supabase.co
+NEXT_PUBLIC_SUPABASE_ANON_KEY=<anon-key>
 ```
 
-**3. Populează catalogul de exerciții:**
+**3. Seed the exercise catalog:**
 
 ```bash
 npx ts-node scripts/seed.ts
 ```
 
-**4. Pornește serverul de dezvoltare:**
+**4. Start the dev server:**
 
 ```bash
 npm run dev
 ```
 
-Aplicația rulează pe [http://localhost:3000](http://localhost:3000).
+The app runs on [http://localhost:3000](http://localhost:3000).
 
-> Pentru login-ul cu Google e nevoie și de un OAuth Client ID în Google Cloud Console, conectat la Supabase (Authentication → Providers → Google).
+> Google login also requires an OAuth Client ID in Google Cloud Console, connected to Supabase (Authentication → Providers → Google).
 
-## 🧩 Detalii de implementare
+## 🧩 Implementation details
 
-- **Grafice desenate manual în SVG** — fără librării de charting; inelul de calorii și graficul de progres sunt componente proprii.
-- **Callback OAuth server-side** (`app/auth/callback/route.ts`) — schimbă codul PKCE pe sesiune pe server, apoi redirecționează; cookie-urile de sesiune sunt gestionate cu `@supabase/ssr`.
-- **Zile calendaristice locale** (`lib/dates.ts`) — toate calculele pe zile folosesc fusul orar al utilizatorului, nu UTC, ca jurnalul să nu „sară" ziua la miezul nopții.
-- **Sesiunea de antrenament** persistă în `localStorage` — dacă închizi pagina în mijlocul antrenamentului, la revenire continui de unde ai rămas.
-- **Seturile consecutive identice se comasează** la salvare (3 seturi de 10×60kg devin un singur rând `3×10×60`), ca istoricul să rămână curat.
+- **Hand-drawn SVG charts** — no charting libraries; the calorie ring and progress chart are custom components.
+- **Server-side OAuth callback** (`app/auth/callback/route.ts`) — exchanges the PKCE code for a session on the server, then redirects; session cookies are managed with `@supabase/ssr`.
+- **Local calendar days** (`lib/dates.ts`) — all day-based calculations use the user's local timezone, not UTC, so the journal doesn't "jump" days at midnight.
+- **Workout session persists** in `localStorage` — if you close the page mid-workout, you pick up where you left off.
+- **Identical consecutive sets are merged** on save (3 sets of 10×60kg become a single `3×10×60` row), keeping the history clean.
